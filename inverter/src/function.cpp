@@ -1,12 +1,20 @@
 #include <iostream>
-#include <array>
+#include <iomanip>
+#include <vector>
 
-/*! 
- * Reverse de order of elements inside the array.
- * @param arr Reference to the array with the values.
- */
-template <std::size_t SIZE>
-void reverse( std::array< std::string, SIZE > & arr )
-{
-    /*codigo*/
+using std::cout; using std::endl;
+using std::vector; using std::fixed;
+using std::setprecision;
+
+int main() {
+    vector<double> d_vec = {123.231, 2.2343, 0.324, 0.012,
+                            26.9491092019, 11013,
+                            92.001112, 0.000000234};
+
+    for (auto &i : d_vec) {
+        cout << setprecision(8) << i << " | ";
+    }
+    cout << endl;
+
+    return EXIT_SUCCESS;
 }
