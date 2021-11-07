@@ -17,9 +17,7 @@ int main(int argc, char * argv[])
 {
     int qtd;
     int soma=0;
-    while(cin >> numero){
-        soma += numero;
-    }
+  
     cout<<"Digite a quantidade de números: ";
     cin >> qtd;
     int vetor[qtd];
