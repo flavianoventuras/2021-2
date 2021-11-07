@@ -1,9 +1,9 @@
+   
 /*!
  * @brief This code implements the Intervalos programming problem
  * @author selan
  * @data June, 6th 2021
  */
-
 #include <iostream>
 using std::cout;
 using std::cin;
@@ -15,52 +15,42 @@ using std::setprecision;
 
 int main(int argc, char * argv[])
 {
-    int numero, qtd;
-    //int grupo1 = 0, grupo2 = 0, grupo3 = 0, grupo4 = 0, grupo5 = 0;
-    float porcen1,porcen2,porcen3,porcen4,porcen5;
+    int qtd;
+    int soma=0;
+    while(cin >> numero){
+        soma += numero;
+    }
     cout<<"Digite a quantidade de números: ";
     cin >> qtd;
     int vetor[qtd];
+    float porcentagem[5] = {0};
 
     for(int i = 0; i<qtd; i++){
         cout<<"Digite um numero:"<<endl;
-        cin >> numero;
-        vetor[i] = numero   ;
-
+        cin >> vetor[i];
     }
 
-    for(int i = 0; i<qtd; i++){
-        cout << vetor[i] << endl;
-    }
-
-    
     for(int i = 0; i < qtd; i++){
-        if(numero > 0 && numero < 25){
-            vetor[i]++;
-        }else if (numero >= 25 && numero < 50){
-           // grupo2++;
-        }else if (numero >= 50 && numero < 75){
-           // grupo3++;
-        }else if (numero >= 75 && numero < 100){
-           // grupo4++;
+        if(vetor[i] > 0 && vetor[i] < 25){
+            porcentagem[0]++;//Armazena no vetor porcentagem posicao 0
+        }else if (vetor[i] >= 25 && vetor[i] < 50){
+            porcentagem[1]++;//Armazena no vetor porcentagem posicao 1
+        }else if (vetor[i] >= 50 && vetor[i] < 75){
+            porcentagem[2]++;//Armazena no vetor porcentagem posicao 2
+        }else if (vetor[i] >= 75 && vetor[i] < 100){
+            porcentagem[3]++;// grupo4++;//Armazena no vetor porcentagem posicao 3
         }else {
-           //    grupo5++;
+            porcentagem[4]++;//    grupo5++;//Armazena no vetor porcentagem posicao 4
         }     
     }
-    for(int i = 0; i < 0; i++){
-
+    cout << "=============Porcentagem:===================="<<endl;
+    for(int i=0;i<5;i++){
+        porcentagem[i] = (porcentagem[i]*100)/qtd; // Coloca os valores da porcentagem no vetor porcentagem
     }
 
-    porcen1 = (vetor[0]*100)/qtd;
-    porcen2 = (vetor[1]*100)/qtd;
-    porcen3 = (vetor[2]*100)/qtd;
-    porcen4 = (vetor[3]*100)/qtd;
-    
-    cout<<"Grupo 1 obteve " << porcen1 << "%" <<endl;
-    cout<<"Grupo 2 obteve " << porcen2 << "%" <<endl;
-    cout<<"Grupo 3 obteve " << porcen3 << "%" <<endl;
-    cout<<"Grupo 4 obteve " << porcen4 << "%" <<endl;
-    cout<<"Grupo 5 obteve " << porcen5 << "%" <<endl;
+    for(int i = 0; i<5; i++){
+        cout<< setprecision(4) << porcentagem[i] << "%" <<endl;
+    }
 
     return 0;
 }
